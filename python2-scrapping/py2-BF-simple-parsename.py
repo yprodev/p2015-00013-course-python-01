@@ -14,9 +14,9 @@ position = raw_input('position -')
 if len(position) < 1 : position = 3
 
 
-for i in range(0, count, 1) :
+for i in range(0, int(count), 1) :
 
-	if len(url) < 1 : url = 'https://pr4e.dr-chuck.com/tsugi/mod/python-data/data/known_by_Fikret.html'
+	if len(url) < 1 : url = 'https://pr4e.dr-chuck.com/tsugi/mod/python-data/data/known_by_Beth.html'
 
 	html = urllib.urlopen(url).read()
 	soup = BeautifulSoup(html)
@@ -29,7 +29,7 @@ for i in range(0, count, 1) :
 		urlName = tag.get('href', None)
 		listing.append(urlName)
 
-	url = listing[position - 1]
+	url = listing[int(position) - 1]
 	print 'Retrieving: ', url
 
 
